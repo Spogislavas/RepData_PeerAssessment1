@@ -108,10 +108,9 @@ Weekdays and weekend data was added to the previously created dataset and below 
 head(data1)
 ``` 
 
-Final plot of the average steps by the weekdays and weekends:
+Final plot of the average steps by the weekdays and weekends: 
 
 ``` {r}
 final1=ddply(data1, .(interval, day), summarise, steps = mean(steps))
-
 qplot(x=interval, y=steps, data=final1, facets=.~day, geom="line", xlab="5 minute interval", ylab="Averarge number of steps", main="Average number of steps by the weekdays and weekends")
 ```
